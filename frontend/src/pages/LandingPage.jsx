@@ -77,6 +77,7 @@ const LandingPage = () => {
             <footer className="landing-footer">
                 <p>© 2026 Cotabato Foundation College of Science and Technology. All rights reserved.</p>
                 <p>Barangay Doroluman, Arakan, Cotabato</p>
+                <p>Develop by : Rolly Batrina & Kent Benedic Hantoc</p>
             </footer>
         </div>
     );
