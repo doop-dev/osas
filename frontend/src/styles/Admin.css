@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================
+   Admin Global Layout (shared by Login, Dashboard, Archive)
+   ========================================================== */
+.admin-layout {
+    --bg: #e4e9f1;
+    --shadow-light: #ffffff;
+    --shadow-dark: #bcc4d3;
+    --text: #1c2740;
+    --text-muted: #4b5873;
+    --accent: #2456a4;
+    --accent-dark: #1b4283;
+    --danger: #b3261e;
+    --success: #17692c;
+
+    --raised: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light);
+    --raised-sm: 5px 5px 11px var(--shadow-dark), -5px -5px 11px var(--shadow-light);
+    --inset: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+
+    font-family: 'Manrope', 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-page {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================================
+   Login
+   ========================================================== */
+.login-layout {
+    align-items: center;
+    padding: 24px;
+}
+
+.login-card {
+    background: var(--bg);
+    padding: 44px 40px;
+    border-radius: 28px;
+    box-shadow: var(--raised);
+    width: 100%;
+    max-width: 420px;
+    height: fit-content;
+    text-align: center;
+}
+
+.login-logo-well {
+    display: grid;
+    place-items: center;
+    width: 104px;
+    height: 104px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    box-shadow: var(--inset);
+}
+
+.login-logo {
+    height: 64px;
+    width: auto;
+}
+
+.login-card h2 {
+    margin: 0 0 28px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+
+.login-field {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.login-error {
+    margin: 0 0 22px;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--danger);
+    text-align: left;
+    border-radius: 12px;
+    box-shadow: var(--inset);
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 6px;
+    padding: 15px 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 5px 5px 12px rgba(36, 86, 164, 0.35), -5px -5px 12px var(--shadow-light);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-btn:hover { background-color: var(--accent-dark); }
+
+.login-btn:active {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================
+   Shared inputs (pressed-in fields)
+   ========================================================== */
+.login-field input,
+.control-field input,
+.control-field select,
+.search-bar {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 0.92rem;
+    color: var(--text);
+    background: var(--bg);
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--inset);
+    transition: box-shadow 0.15s ease;
+}
+
+.login-field input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    border-radius: 14px;
+}
+
+.control-field input,
+.control-field select {
+    padding: 10px 14px;
+    min-width: 150px;
+}
+
+.control-field select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 36px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231c2740' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.search-bar {
+    padding: 11px 16px;
+    width: 280px;
+}
+
+.login-field input::placeholder,
+.search-bar::placeholder { color: #7a869e; }
+
+.login-field input:focus-visible,
+.control-field input:focus-visible,
+.control-field select:focus-visible,
+.search-bar:focus-visible {
+    outline: none;
+    box-shadow: var(--inset), 0 0 0 2px var(--accent);
+}
+
+/* ==========================================================
+   Dashboard: top bar
+   ========================================================== */
+.admin-topbar {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.admin-brand h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+
+.logo-well-sm {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    box-shadow: var(--inset);
+}
+
+.admin-brand-logo {
+    height: 40px;
+    width: auto;
+}
+
+/* ==========================================================
+   Dashboard: cards
+   ========================================================== */
+.dashboard-card {
+    background: var(--bg);
+    padding: 28px;
+    border-radius: 24px;
+    box-shadow: var(--raised);
+    width: 100%;
+    max-width: 1100px;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.control-panel {
+    margin-bottom: 32px;
+}
+
+.control-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.control-main h3 {
+    margin: 0 0 16px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.control-fields {
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.control-field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.control-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Open / closed status */
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    border-radius: 12px;
+    box-shadow: var(--inset);
+}
+
+.status-pill.is-open { color: var(--success); }
+.status-pill.is-closed { color: var(--danger); }
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* ==========================================================
+   Dashboard: header + table
+   ========================================================== */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.dashboard-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.dashboard-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--accent);
+    border-bottom: 2px solid var(--shadow-dark);
+    box-shadow: 0 2px 0 var(--shadow-light);
+}
+
+.admin-table td {
+    padding: 14px;
+    color: var(--text);
+    border-bottom: 1px solid #ccd3e0;
+}
+
+.admin-table tbody tr:hover {
+    background: rgba(36, 86, 164, 0.06);
+}
+
+.empty-row {
+    text-align: center;
+    padding: 28px 14px;
+    color: var(--text-muted);
+}
+
+/* ==========================================================
+   Badges
+   ========================================================== */
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: var(--inset);
+}
+
+.status-Pending { color: #8a5a00; }
+.status-Accepted { color: #17692c; }
+.status-Rejected { color: #b3261e; }
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+.btn,
+.btn-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn {
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: var(--raised-sm);
+}
+
+.btn-control {
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: var(--raised-sm);
+}
+
+.btn-view {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 4px 4px 10px rgba(36, 86, 164, 0.35), -4px -4px 10px var(--shadow-light);
+}
+.btn-view:hover { background: var(--accent-dark); }
+
+.btn-export { color: var(--success); }
+.btn-export:hover { color: #0f4d1f; }
+
+.btn-logout { color: var(--danger); }
+.btn-archive { color: var(--text-muted); }
+.btn-view-archives { color: var(--accent); }
+
+.btn-open-portal {
+    background: var(--success);
+    color: #ffffff;
+    box-shadow: 5px 5px 12px rgba(23, 105, 44, 0.35), -5px -5px 12px var(--shadow-light);
+}
+.btn-open-portal:hover { background: #0f4d1f; }
+
+.btn-close-portal {
+    background: var(--danger);
+    color: #ffffff;
+    box-shadow: 5px 5px 12px rgba(179, 38, 30, 0.35), -5px -5px 12px var(--shadow-light);
+}
+.btn-close-portal:hover { background: #8c1d17; }
+
+.btn:active,
+.btn-control:active {
+    box-shadow: var(--inset);
+}
+
+.btn-view:active,
+.btn-open-portal:active,
+.btn-close-portal:active {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.12);
+}
+
+.btn:focus-visible,
+.btn-control:focus-visible,
+.login-btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* ==========================================================
+   Responsive & motion
+   ========================================================== */
+@media (max-width: 720px) {
+    .admin-layout { padding: 20px 14px; }
+    .dashboard-card { padding: 20px 16px; }
+    .login-card { padding: 34px 24px; }
+    .search-bar { width: 100%; }
+    .dashboard-actions { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-btn,
+    .btn,
+    .btn-control,
+    .login-field input,
+    .control-field input,
+    .control-field select,
+    .search-bar { transition: none; }
+}

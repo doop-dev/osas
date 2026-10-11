@@ -1,0 +1,325 @@
+/* frontend/src/styles/DocumentView.css */
+
+:root {
+    --c-black: #000000;
+    --c-white: #ffffff;
+    --font-main: Arial, Helvetica, sans-serif;
+    --font-serif: "Times New Roman", serif;
+    --border-width: 1px;
+    --cell-pad: 2px; 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: var(--font-main);
+    font-size: 10pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.page {
+    width: 210mm;
+    height: 297mm;
+    background: var(--c-white);
+    margin: 20px auto;
+    padding: 10mm 12mm; 
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+    font-family: var(--font-main);
+}
+
+.logo-box {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.header-text {
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.header-text h3 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 10pt;
+    line-height: 1.2;
+}
+
+.header-text h1 {
+    margin: 2px 0;
+    font-size: 11pt; 
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.header-text p {
+    margin: 0;
+    font-size: 9pt;
+}
+
+.form-container {
+    border: 2px solid var(--c-black); 
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    border-bottom: 1px solid var(--c-black);
+    width: 100%;
+}
+.row:last-child {
+    border-bottom: none;
+}
+
+.col {
+    padding: var(--cell-pad);
+    border-right: 1px solid var(--c-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    position: relative;
+}
+.col:last-child {
+    border-right: none;
+}
+
+.id-picture {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    border-right: 1px solid var(--c-black);
+}
+
+.title-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 13pt;
+    padding: 4px 0;
+    text-transform: uppercase;
+}
+
+.sy-sem {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 2px;
+    font-size: 9pt;
+}
+.sy-sem span {
+    border-bottom: 1px solid black;
+    min-width: 60px;
+    display: inline-block;
+}
+
+.status-block {
+    width: 100px;
+    font-size: 9pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5px;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 9pt;
+    margin-bottom: 0; 
+    line-height: 1.1;
+}
+
+.sub-label {
+    font-size: 7pt;
+    margin-top: 0; 
+    font-style: italic; 
+    line-height: 1;
+}
+
+.w-full { width: 100%; }
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+.flex-3 { flex: 3; }
+
+.row-writing {
+    height: 24px;
+}
+.row-writing .col {
+    justify-content: flex-start;
+    padding-top: 2px;
+    padding-left: 4px;
+}
+
+.row-sublabel {
+    height: 14px;
+}
+.row-sublabel .col {
+    justify-content: center;
+    padding: 0;
+}
+
+.body-text {
+    margin-top: 10px; 
+    line-height: 2.0; 
+    text-align: justify;
+    font-size: 10pt;
+    text-indent: 40px; 
+}
+
+.inline-input {
+    border-bottom: 1px solid black;
+    display: inline-block;
+    min-width: 50px;
+    text-align: center;
+}
+
+.grades-table-container {
+    margin-top: 5px;
+}
+
+.grades-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-size: 10pt;
+}
+
+table.grades {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    font-size: 9pt;
+}
+
+table.grades th, table.grades td {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    height: 20px; 
+}
+
+table.grades th {
+    background: transparent;
+    font-weight: bold;
+}
+
+.col-course { width: 15%; }
+.col-desc { width: 45%; }
+.col-units { width: 10%; }
+.col-rating { width: 15%; }
+.col-remarks { width: 15%; }
+
+.footer {
+    margin-top: 25px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 10pt;
+}
+
+.sig-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 35%;
+}
+
+.sig-line {
+    width: 100%;
+    border-top: 1px solid black;
+    margin-top: 30px; 
+    text-align: center;
+    padding-top: 2px;
+    font-weight: bold;
+}
+
+.sig-label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.document-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 5pt; 
+    padding-top: 15px;
+}
+
+.doc-control {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+.doc-row {
+    display: flex;
+}
+
+.doc-label {
+    width: 50px; 
+}
+
+.footer-logo {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.footer-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+    .page {
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+        page-break-after: avoid;
+    }
+}
