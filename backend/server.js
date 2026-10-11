@@ -3,14 +3,21 @@ const cors = require('cors');
 const Database = require('better-sqlite3');
 const os = require('os');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// Connect to the SQLite database.
-const db = new Database('./db/cfcst_scholarship.db', {
+// Create the .data directory automatically if it is missing
+const dbDir = path.join(__dirname, '.data');
+if (!fs.existsSync(dbDir)) {
+    fs.mkdirSync(dbDir, { recursive: true });
+}
+
+// Connect to the SQLite database using an absolute path
+const db = new Database(path.join(dbDir, 'cfcst_scholarship.db'), {
     verbose: console.log
 });
 
