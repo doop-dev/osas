@@ -100,13 +100,14 @@ const DocumentView = () => {
 
                     .doc-body {
                         margin: 0;
-                        padding: 0;
+                        padding: 10px;
                         font-family: var(--font-main);
                         font-size: 10pt;
                         -webkit-print-color-adjust: exact;
                         print-color-adjust: exact;
                         display: flex;
-                        justify-content: center;
+                        justify-content: flex-start; /* Changed so it aligns left on mobile */
+                        overflow-x: auto; /* Allows horizontal scrolling on phones */
                     }
 
                     .page {
