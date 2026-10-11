@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Admin.css';
 import * as XLSX from 'xlsx';
-const API_BASE = `http://${window.location.hostname}:5000`;
+const API_BASE = "";
 
 
 const iconProps = { viewBox: '0 0 24 24', width: 18, height: 18, fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true };

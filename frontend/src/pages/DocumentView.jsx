@@ -3,7 +3,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import html2pdf from 'html2pdf.js';
 import '../styles/DocumentView.css';
-const API_BASE = `http://${window.location.hostname}:5000`;
+const API_BASE = "";
 
 
 const DocumentView = () => {

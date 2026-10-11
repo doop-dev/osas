@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import * as XLSX from 'xlsx';
 import '../styles/Admin.css';
-const API_BASE = `http://${window.location.hostname}:5000`;
+const API_BASE = "";
 
 
 const AdminArchive = () => {

@@ -5,8 +5,7 @@ import * as z from 'zod';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../styles/FormEntry.css';
-const API_BASE = `http://${window.location.hostname}:5000`;
-
+const API_BASE = "";
 
 // 1. Strict Validation Schema with DYNAMIC ID REQUIREMENT
 const schema = z.object({
